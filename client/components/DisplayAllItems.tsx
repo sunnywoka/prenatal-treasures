@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { getAllItems } from '../apis/itemsApis.js'
 import { useQuery } from '@tanstack/react-query'
+import AddItem from './AddItem.js'
 
 function DisplayAllItems() {
   const { data } = useQuery(['items'], getAllItems)
+
   const categories = [...new Set(data?.map((item) => item.category || ''))]
   const targets = [...new Set(data?.map((item) => item.target || ''))]
 
@@ -22,6 +24,7 @@ function DisplayAllItems() {
 
   return (
     <>
+      <AddItem />
       <div>
         <select value={selectedTarget} onChange={handleTargetChange}>
           <option value={''}>--Select--</option>
@@ -40,16 +43,6 @@ function DisplayAllItems() {
           ))}
         </select>
         <ul>
-          {/* {data &&
-            data.map((item) => (
-              <div key={item.id}>
-                <p>
-                  Name: <a href={item.where_to_buy}>{item.name}</a>
-                </p>
-                <p>Quanlity: {item.quantity}</p>
-                <p>Cost: ${item.total_price}</p>
-              </div>
-            ))} */}
           {data &&
             data
               .filter((item) => {
@@ -69,6 +62,8 @@ function DisplayAllItems() {
                   </p>
                   <p>Quantity: {item.quantity}</p>
                   <p>Cost: ${item.total_price}</p>
+                  <button>Edit</button>
+                  <button>Delete</button>
                 </div>
               ))}
         </ul>

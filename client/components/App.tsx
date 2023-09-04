@@ -1,3 +1,4 @@
+import AddItem from './AddItem.tsx'
 import Nav from './Nav.tsx'
 
 import { Outlet } from 'react-router-dom'

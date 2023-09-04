@@ -4,32 +4,19 @@ import {
   useQueryClient,
   MutationFunction,
 } from '@tanstack/react-query'
-// import { getAllItems } from '../apis/itemsApis.js'
 
-// export function useItems() {
-//   const query = useQuery(['items'], getAllItems)
-//   return {
-//     ...query,
-//   }
-// }
+import { addItem } from '../apis/itemsApis.js'
+import { ItemData } from '../../models/item.js'
 
-// export function useItemsMutation() {
-//   const queryClient = useQueryClient()
-//   const mutation = useMutation({
-//     mutationFn:
-//     onSuccess: () => {
-//       queryClient.invalidateQueries({ queryKey: ['items'] })
-//     },
-//   })
-
-//   return mutation
-// }
-
-// Query functions go here e.g. useAddFruit
-/* function useAddFruit() {
-  return useFruitsMutation(addFruit)
-} */
-
-//<TData = unknown, TVariables = unknown>(
-//   mutationFn: MutationFunction<TData, TVariables>,
-// )
+export function addItemMudation() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const queryClient = useQueryClient()
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const mutationAdd = useMutation({
+    mutationFn: (item: ItemData) => addItem(item),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['items'])
+    },
+  })
+  return mutationAdd
+}
