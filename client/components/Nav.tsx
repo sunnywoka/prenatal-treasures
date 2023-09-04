@@ -4,7 +4,8 @@ function Nav() {
   return (
     <>
       <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link> |{' '}
+        <Link to="/thanks">Special Thanks</Link>
       </nav>
     </>
   )
