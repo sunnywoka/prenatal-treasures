@@ -1,4 +1,5 @@
 export interface ItemData {
+  target: string
   category: string
   name: string
   unit_price: number

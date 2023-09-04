@@ -4,14 +4,14 @@ import {
   useQueryClient,
   MutationFunction,
 } from '@tanstack/react-query'
-import { getAllItems } from '../apis/itemsApis.js'
+// import { getAllItems } from '../apis/itemsApis.js'
 
-export function useItems() {
-  const query = useQuery(['items'], getAllItems)
-  return {
-    ...query,
-  }
-}
+// export function useItems() {
+//   const query = useQuery(['items'], getAllItems)
+//   return {
+//     ...query,
+//   }
+// }
 
 // export function useItemsMutation() {
 //   const queryClient = useQueryClient()
