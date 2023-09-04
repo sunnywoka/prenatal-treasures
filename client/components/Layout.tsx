@@ -1,4 +1,5 @@
-import DisplayAllItems from './DisplayAllItems.js'
+import DisplayAllItems from './DisplayAllItems'
+import Nav from './Nav'
 
 function Layout() {
   return (

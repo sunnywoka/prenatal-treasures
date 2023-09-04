@@ -5,8 +5,7 @@ function DisplayAllItems() {
 
   return (
     <>
-      <div className="app">
-        <h1>Prenantal Treasures</h1>
+      <div>
         <ul>
           {data &&
             data.map((item) => (
