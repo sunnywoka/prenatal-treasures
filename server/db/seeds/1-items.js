@@ -3,6 +3,7 @@ export async function seed(knex) {
     {
       id: 1,
       category: 'Clothes',
+      target: 'baby',
       name: 'Little bundle going home 6 piece set',
       unit_price: 55.99,
       quantity: 1,
@@ -14,6 +15,7 @@ export async function seed(knex) {
     {
       id: 2,
       category: 'Bottles',
+      target: 'baby',
       name: 'Flexible Peristaltic Slim-Neck Bottle PP 240ml (M)',
       unit_price: 18.99,
       quantity: 2,
@@ -25,6 +27,7 @@ export async function seed(knex) {
     {
       id: 3,
       category: 'Books',
+      target: 'parent',
       name: 'The Healthy Pregnancy Book',
       unit_price: 34.05,
       quantity: 1,

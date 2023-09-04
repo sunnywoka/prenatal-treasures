@@ -1,6 +1,7 @@
 export async function up(knex) {
   return knex.schema.createTable('items', (table) => {
     table.increments('id')
+    table.string('target')
     table.string('category')
     table.string('name')
     table.float('unit_price')
