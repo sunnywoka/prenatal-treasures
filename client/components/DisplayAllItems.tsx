@@ -14,6 +14,7 @@ function DisplayAllItems() {
 
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedTarget, setSelectedTarget] = useState('')
+  const [isEdit, setIsEdit] = useState(0)
 
   const handleCategoryChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -23,6 +24,10 @@ function DisplayAllItems() {
 
   const handleTargetChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedTarget(event.target.value)
+  }
+
+  function handleStartEdit(id: number) {
+    setIsEdit(id)
   }
 
   return (
@@ -59,19 +64,27 @@ function DisplayAllItems() {
                 }
                 return true
               })
-              .map((item) => (
-                <div key={item.id}>
-                  <p>
-                    Name: <a href={item.where_to_buy}>{item.name}</a>
-                  </p>
-                  <p>Quantity: {item.quantity}</p>
-                  <p>Cost: ${item.total_price}</p>
-                  <button>Edit</button>
-                  <button onClick={() => mutationDelete.mutate(item.id)}>
-                    Delete
-                  </button>
-                </div>
-              ))}
+              .map((item) =>
+                isEdit !== item.id ? (
+                  <div key={item.id}>
+                    <p>
+                      Name: <a href={item.where_to_buy}>{item.name}</a>
+                    </p>
+                    <p>Quantity: {item.quantity}</p>
+                    <p>Cost: ${item.total_price}</p>
+                    <button onClick={() => handleStartEdit(item.id)}>
+                      Edit
+                    </button>
+                    <button onClick={() => mutationDelete.mutate(item.id)}>
+                      Delete
+                    </button>
+                  </div>
+                ) : (
+                  <div key={item.id}>
+                    <h1>Nothing yet</h1>
+                  </div>
+                ),
+              )}
         </ul>
       </div>
     </>

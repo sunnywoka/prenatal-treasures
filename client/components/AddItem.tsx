@@ -9,8 +9,8 @@ function AddItem() {
   const handleAddItem = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       mutation.mutate({
-        target: '',
-        category: '',
+        target: 'unknown',
+        category: 'unknown',
         name: input,
         unit_price: 0,
         quantity: 0,
