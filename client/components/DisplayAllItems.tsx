@@ -2,9 +2,12 @@ import { useState } from 'react'
 import { getAllItems } from '../apis/itemsApis.js'
 import { useQuery } from '@tanstack/react-query'
 import AddItem from './AddItem.js'
+import { deleteItemMudation, updateItemMudation } from '../hooks/useItems.js'
 
 function DisplayAllItems() {
   const { data } = useQuery(['items'], getAllItems)
+  const mutationDelete = deleteItemMudation()
+  const mutationUpdate = updateItemMudation()
 
   const categories = [...new Set(data?.map((item) => item.category || ''))]
   const targets = [...new Set(data?.map((item) => item.target || ''))]
@@ -48,6 +51,7 @@ function DisplayAllItems() {
               .filter((item) => {
                 // Apply filters based on selectedCategory and selectedTarget
                 if (selectedCategory && item.category !== selectedCategory) {
+                  console.log(selectedCategory && item.category)
                   return false
                 }
                 if (selectedTarget && item.target !== selectedTarget) {
@@ -63,7 +67,9 @@ function DisplayAllItems() {
                   <p>Quantity: {item.quantity}</p>
                   <p>Cost: ${item.total_price}</p>
                   <button>Edit</button>
-                  <button>Delete</button>
+                  <button onClick={() => mutationDelete.mutate(item.id)}>
+                    Delete
+                  </button>
                 </div>
               ))}
         </ul>

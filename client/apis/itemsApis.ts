@@ -11,3 +11,11 @@ export async function getAllItems() {
 export async function addItem(item: ItemData) {
   await request.post(rootUrl).send(item)
 }
+
+export async function deleteItem(id: number) {
+  await request.delete(rootUrl + `/${id}`)
+}
+
+export async function updateItem(item: Item) {
+  await request.patch(rootUrl + `/${item.id}`).send(item)
+}

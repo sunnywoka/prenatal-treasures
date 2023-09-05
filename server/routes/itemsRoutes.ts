@@ -26,4 +26,27 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id)
+    await db.deleteItem(id)
+    res.sendStatus(201)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+})
+
+router.patch('/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id)
+    const item = req.body
+    await db.deleteItem(id, item)
+    res.sendStatus(201)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+})
+
 export default router
