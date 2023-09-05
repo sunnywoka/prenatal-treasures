@@ -17,5 +17,5 @@ export async function deleteItem(id: number) {
 }
 
 export async function updateItem(item: Item) {
-  await request.patch(rootUrl + `/${item.id}`).send(item)
+  await request.put(rootUrl + `/${item.id}`).send(item)
 }

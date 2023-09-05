@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { getAllItems } from '../apis/itemsApis.js'
 import { useQuery } from '@tanstack/react-query'
+import { getAllItems } from '../apis/itemsApis.js'
+import { deleteItemMudation } from '../hooks/useItems.js'
 import AddItem from './AddItem.js'
-import { deleteItemMudation, updateItemMudation } from '../hooks/useItems.js'
+import UpdateItem from './UpdateItem.js'
 
 function DisplayAllItems() {
   const { data } = useQuery(['items'], getAllItems)
   const mutationDelete = deleteItemMudation()
-  const mutationUpdate = updateItemMudation()
 
   const categories = [...new Set(data?.map((item) => item.category || ''))]
   const targets = [...new Set(data?.map((item) => item.target || ''))]
@@ -81,7 +81,7 @@ function DisplayAllItems() {
                   </div>
                 ) : (
                   <div key={item.id}>
-                    <h1>Nothing yet</h1>
+                    <UpdateItem item={item} setIsEdit={setIsEdit} />
                   </div>
                 ),
               )}

@@ -37,11 +37,11 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
-router.patch('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
     const item = req.body
-    await db.deleteItem(id, item)
+    await db.updateItem(id, item)
     res.sendStatus(201)
   } catch (error) {
     console.log(error)
