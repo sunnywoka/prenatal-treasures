@@ -5,7 +5,7 @@ function Nav() {
     <>
       <nav>
         <Link to="/">Home</Link> | <Link to="/about">About</Link> |{' '}
-        <Link to="/thanks">Special Thanks</Link>
+        <Link to="/special-thanks">Special Thanks</Link>
       </nav>
     </>
   )

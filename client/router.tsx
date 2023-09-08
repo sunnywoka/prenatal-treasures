@@ -8,6 +8,6 @@ export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
     <Route index element={<Layout />} />
     <Route path="about" element={<About />} />
-    <Route path="thanks" element={<SpecialThanks />} />
+    <Route path="special-thanks" element={<SpecialThanks />} />
   </Route>,
 )
