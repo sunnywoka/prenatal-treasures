@@ -1,7 +1,7 @@
 function SpecialThanks() {
   return (
     <>
-      <h2>Special Thanks</h2>
+      <h2 className="text-3xl font-bold">Special Thanks</h2>
       <p>
         A very special thanks to{' '}
         <a href="https://www.linkedin.com/in/udelduca">Rodolfo Usó Delduca</a>,

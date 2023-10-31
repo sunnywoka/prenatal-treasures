@@ -4,8 +4,17 @@ function Nav() {
   return (
     <>
       <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link> |{' '}
-        <Link to="/special-thanks">Special Thanks</Link>
+        <Link to="/" className="bg-green-400 hover:bg-green-500">
+          Home
+        </Link>{' '}
+        |{' '}
+        <Link to="/about" className="bg-green-400 hover:bg-green-500">
+          About
+        </Link>{' '}
+        |{' '}
+        <Link to="/special-thanks" className="bg-green-400 hover:bg-green-500">
+          Special Thanks
+        </Link>
       </nav>
     </>
   )

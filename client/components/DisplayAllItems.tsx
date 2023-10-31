@@ -34,7 +34,11 @@ function DisplayAllItems() {
     <>
       <AddItem />
       <div>
-        <select value={selectedTarget} onChange={handleTargetChange}>
+        <select
+          value={selectedTarget}
+          onChange={handleTargetChange}
+          className="border-2 border-green-500"
+        >
           <option value={''}>--Select--</option>
           {targets.map((target, index) => (
             <option value={target} key={index}>
@@ -42,7 +46,11 @@ function DisplayAllItems() {
             </option>
           ))}
         </select>
-        <select value={selectedCategory} onChange={handleCategoryChange}>
+        <select
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+          className="border-2 border-green-500"
+        >
           <option value={''}>--Category--</option>
           {categories.map((category, index) => (
             <option value={category} key={index}>
@@ -72,10 +80,16 @@ function DisplayAllItems() {
                     </p>
                     <p>Quantity: {item.quantity}</p>
                     <p>Cost: ${item.total_price}</p>
-                    <button onClick={() => handleStartEdit(item.id)}>
+                    <button
+                      onClick={() => handleStartEdit(item.id)}
+                      className="border-2 border-green-500 bg-green-300 hover:bg-green-400"
+                    >
                       Edit
                     </button>
-                    <button onClick={() => mutationDelete.mutate(item.id)}>
+                    <button
+                      onClick={() => mutationDelete.mutate(item.id)}
+                      className="border-2 border-green-500 bg-green-300 hover:bg-green-400"
+                    >
                       Delete
                     </button>
                   </div>

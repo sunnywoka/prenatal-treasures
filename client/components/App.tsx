@@ -31,7 +31,7 @@ function App() {
           Prenantal Treasures
         </h1>
       </div>
-      <div>
+      <div className="text-center">
         <Nav />
         <Outlet />
       </div>

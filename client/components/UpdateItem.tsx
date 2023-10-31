@@ -100,9 +100,16 @@ function UpdateItem(props: Props) {
               defaultValue={props.item.where_to_buy}
             ></input>
           </div>
-          <button>Save</button>
+          <button className="border-2 border-green-500 bg-green-300 hover:bg-green-400">
+            Save
+          </button>
         </form>
-        <button onClick={cancel}>Cancel</button>
+        <button
+          onClick={cancel}
+          className="border-2 border-green-500 bg-green-300 hover:bg-green-400"
+        >
+          Cancel
+        </button>
       </>
     </>
   )
