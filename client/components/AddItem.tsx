@@ -29,7 +29,7 @@ function AddItem() {
         onKeyDown={handleAddItem}
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="border-2 border-green-500"
+        className="m-2 border-2 border-green-500"
       />
     </>
   )

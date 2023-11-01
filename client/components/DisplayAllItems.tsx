@@ -37,7 +37,7 @@ function DisplayAllItems() {
         <select
           value={selectedTarget}
           onChange={handleTargetChange}
-          className="border-2 border-green-500"
+          className="m-2 border-2 border-green-500"
         >
           <option value={''}>--Select--</option>
           {targets.map((target, index) => (
@@ -49,7 +49,7 @@ function DisplayAllItems() {
         <select
           value={selectedCategory}
           onChange={handleCategoryChange}
-          className="border-2 border-green-500"
+          className="m-2 border-2 border-green-500"
         >
           <option value={''}>--Category--</option>
           {categories.map((category, index) => (
@@ -74,21 +74,25 @@ function DisplayAllItems() {
               })
               .map((item) =>
                 isEdit !== item.id ? (
-                  <div key={item.id}>
+                  <div key={item.id} className="m-2 border-2 border-green-500">
                     <p>
-                      Name: <a href={item.where_to_buy}>{item.name}</a>
+                      <b>Name:</b> <a href={item.where_to_buy}>{item.name}</a>
                     </p>
-                    <p>Quantity: {item.quantity}</p>
-                    <p>Cost: ${item.total_price}</p>
+                    <p>
+                      <b>Quantity:</b> {item.quantity}
+                    </p>
+                    <p>
+                      <b>Cost:</b> ${item.total_price}
+                    </p>
                     <button
                       onClick={() => handleStartEdit(item.id)}
-                      className="border-2 border-green-500 bg-green-300 hover:bg-green-400"
+                      className="m-2 border-2 border-green-500 bg-green-300 hover:bg-green-400"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => mutationDelete.mutate(item.id)}
-                      className="border-2 border-green-500 bg-green-300 hover:bg-green-400"
+                      className="m-2 border-2 border-green-500 bg-green-300 hover:bg-green-400"
                     >
                       Delete
                     </button>

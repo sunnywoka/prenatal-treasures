@@ -27,11 +27,11 @@ function App() {
   return (
     <>
       <div>
-        <h1 className="text-center text-6xl font-bold underline ">
+        <h1 className="text-justify text-6xl font-bold underline ">
           Prenantal Treasures
         </h1>
       </div>
-      <div className="text-center">
+      <div className="text-justify">
         <Nav />
         <Outlet />
       </div>

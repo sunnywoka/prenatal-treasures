@@ -45,68 +45,86 @@ function UpdateItem(props: Props) {
       <>
         <form onSubmit={handleClick}>
           <div>
-            <label htmlFor="editName">Name: </label>
+            <label htmlFor="editName" className="font-bold">
+              Name:{' '}
+            </label>
             <input
               type="text"
               id="editName"
               name="name"
               defaultValue={props.item.name}
+              className="m-2 border-2 border-green-500"
             ></input>
           </div>
           <div>
-            <label htmlFor="selectForTarget">Select for: </label>
+            <label htmlFor="selectForTarget" className="font-bold">
+              Select for:{' '}
+            </label>
             <select
               id="selectForTarget"
               name="target"
               defaultValue={props.item.target}
+              className="m-2 border-2 border-green-500"
             >
               <option key="parent">parent</option>
               <option key="baby">baby</option>
             </select>
           </div>
           <div>
-            <label htmlFor="editCategory">Category: </label>
+            <label htmlFor="editCategory" className="font-bold">
+              Category:{' '}
+            </label>
             <input
               type="text"
               id="editCategory"
               name="category"
               defaultValue={props.item.category}
+              className="m-2 border-2 border-green-500"
             ></input>
           </div>
           <div>
-            <label htmlFor="editUnitPrice">Unit Price: </label>
+            <label htmlFor="editUnitPrice" className="font-bold">
+              Unit Price:{' '}
+            </label>
             <input
               type="text"
               id="editUnitPrice"
               name="unit_price"
               defaultValue={props.item.unit_price}
+              className="m-2 border-2 border-green-500"
             ></input>
           </div>
           <div>
-            <label htmlFor="editQuantity">Quantity: </label>
+            <label htmlFor="editQuantity" className="font-bold">
+              Quantity:{' '}
+            </label>
             <input
               type="text"
               id="editQuantity"
               name="quantity"
               defaultValue={props.item.quantity}
+              className="m-2 border-2 border-green-500"
             ></input>
           </div>
           <div>
-            <label htmlFor="editWhereToBuy">Where To Buy: </label>
+            <label htmlFor="editWhereToBuy" className="font-bold">
+              Where To Buy:{' '}
+            </label>
             <input
               type="text"
               id="editWhereToBuy"
               name="where_to_buy"
               defaultValue={props.item.where_to_buy}
+              className="m-2 border-2 border-green-500"
             ></input>
           </div>
-          <button className="border-2 border-green-500 bg-green-300 hover:bg-green-400">
+          <button className="m-2 border-2 border-green-500 bg-green-300 hover:bg-green-400">
             Save
           </button>
         </form>
         <button
           onClick={cancel}
-          className="border-2 border-green-500 bg-green-300 hover:bg-green-400"
+          className="m-2 border-2 border-green-500 bg-green-300 hover:bg-green-400"
         >
           Cancel
         </button>
