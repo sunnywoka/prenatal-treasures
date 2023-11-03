@@ -74,7 +74,10 @@ function DisplayAllItems() {
               })
               .map((item) =>
                 isEdit !== item.id ? (
-                  <div key={item.id} className="m-2 border-2 border-green-500">
+                  <div
+                    key={item.id}
+                    className="m-auto my-2 w-1/2 2xl:w-1/4 xl:w-1/3 lg:w-1/3 border-2 border-green-500"
+                  >
                     <p>
                       <b>Name:</b> <a href={item.where_to_buy}>{item.name}</a>
                     </p>

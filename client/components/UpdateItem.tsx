@@ -42,7 +42,7 @@ function UpdateItem(props: Props) {
   }
   return (
     <>
-      <>
+      <div className="m-auto my-2 w-1/2 border-2 border-green-500">
         <form onSubmit={handleClick}>
           <div>
             <label htmlFor="editName" className="font-bold">
@@ -114,7 +114,11 @@ function UpdateItem(props: Props) {
               type="text"
               id="editWhereToBuy"
               name="where_to_buy"
-              defaultValue={props.item.where_to_buy}
+              defaultValue={
+                props.item.where_to_buy.length == 0
+                  ? 'Paste link of items'
+                  : props.item.where_to_buy
+              }
               className="m-2 border-2 border-green-500"
             ></input>
           </div>
@@ -128,7 +132,7 @@ function UpdateItem(props: Props) {
         >
           Cancel
         </button>
-      </>
+      </div>
     </>
   )
 }
