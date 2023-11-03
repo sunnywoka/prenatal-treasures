@@ -42,7 +42,7 @@ function UpdateItem(props: Props) {
   }
   return (
     <>
-      <div className="m-auto my-2 w-1/2 border-2 border-green-500">
+      <div className="text-left m-auto my-2 w-1/2 2xl:w-1/4 xl:w-1/3 lg:w-1/3 border-2 border-green-500">
         <form onSubmit={handleClick}>
           <div>
             <label htmlFor="editName" className="font-bold">

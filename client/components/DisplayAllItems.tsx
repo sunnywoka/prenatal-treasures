@@ -30,6 +30,16 @@ function DisplayAllItems() {
     setIsEdit(id)
   }
 
+  function isValidUrl(urlString: string) {
+    let url
+    try {
+      url = new URL(urlString)
+    } catch (e) {
+      return false
+    }
+    return url.protocol === 'http:' || url.protocol === 'https:'
+  }
+
   return (
     <>
       <AddItem />
@@ -76,10 +86,20 @@ function DisplayAllItems() {
                 isEdit !== item.id ? (
                   <div
                     key={item.id}
-                    className="m-auto my-2 w-1/2 2xl:w-1/4 xl:w-1/3 lg:w-1/3 border-2 border-green-500"
+                    className="text-left m-auto my-2 w-1/2 2xl:w-1/4 xl:w-1/3 lg:w-1/3 border-2 border-green-500"
                   >
                     <p>
-                      <b>Name:</b> <a href={item.where_to_buy}>{item.name}</a>
+                      <b>Name:</b>{' '}
+                      {isValidUrl(item.where_to_buy) ? (
+                        <a
+                          href={item.where_to_buy}
+                          className={'underline text-blue-600'}
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        item.name
+                      )}
                     </p>
                     <p>
                       <b>Quantity:</b> {item.quantity}
