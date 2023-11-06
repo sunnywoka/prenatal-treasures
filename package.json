@@ -32,6 +32,7 @@
     "knex": "^2.5.1",
     "pg": "^8.11.3",
     "postcss": "^8.4.29",
+    "react-to-print": "^2.14.15",
     "sqlite3": "^5.1.6",
     "superagent": "7.1.1"
   },

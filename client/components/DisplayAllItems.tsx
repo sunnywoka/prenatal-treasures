@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { getAllItems } from '../apis/itemsApis.js'
 import { deleteItemMudation } from '../hooks/useItems.js'
 import AddItem from './AddItem.js'
 import UpdateItem from './UpdateItem.js'
+import { useReactToPrint } from 'react-to-print'
 
 function DisplayAllItems() {
   const { data } = useQuery(['items'], getAllItems)
@@ -40,9 +41,15 @@ function DisplayAllItems() {
     return url.protocol === 'http:' || url.protocol === 'https:'
   }
 
+  const componentRef = useRef(null)
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  })
+
   return (
     <>
       <AddItem />
+
       <div>
         <select
           value={selectedTarget}
@@ -68,7 +75,7 @@ function DisplayAllItems() {
             </option>
           ))}
         </select>
-        <ul>
+        <ul ref={componentRef}>
           {data &&
             data
               .filter((item) => {
@@ -127,6 +134,12 @@ function DisplayAllItems() {
                 ),
               )}
         </ul>
+        <button
+          onClick={handlePrint}
+          className="m-2 border-2 border-green-500 bg-green-300 hover:bg-green-400"
+        >
+          Print your list out!
+        </button>
       </div>
     </>
   )
