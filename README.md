@@ -1,5 +1,7 @@
 # Prenatal Treasures
 
+I have deployed this project on Railway.app. [Click it to view](https://prenatal-treasures.up.railway.app/)
+
 ## Project Objective
 
 The Prenatal Treasures is my personal project designed to provide support and assistance in preparing for the arrival of a newborn baby. It was created out of the necessity to have a convenient and efficient tool for tracking baby and mummy essentials. The goal is to streamline the process of organising and managing the items needed for your new family member.
