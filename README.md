@@ -21,8 +21,6 @@ After struggling to find a suitable app for tracking baby and mummy essentials, 
 ## Technologies Used
 - **Front-end**: Built using React, React Query, and Tailwind CSS, the project leverages modern web technologies for a seamless user experience.
 
-- **Authentication**: Auth0 is implemented for user sign-up and login, ensuring secure access to the application.
-
 - **Data Storage**: SQLite3 is utilised for efficient and reliable data storage, ensuring that your information is stored securely.
 
 ## Future Plans
@@ -33,5 +31,7 @@ The Prenatal Treasures project is continuously evolving, and there are several e
 - **Social Features**: Implementation of Auth0 for social features will enhance the collaborative aspect of the application, allowing for shared lists and collaborative planning.
 
 - **Enhanced User Experience**: I am dedicated to improving the design elements to further enhance the user experience, ensuring that the app remains intuitive and user-friendly.
+
+- **Authentication**: Auth0 is implemented for user sign-up and login, ensuring secure access to the application.
 
 Thank you for using the Prenatal Treasures! We hope it brings as much convenience to your family as it has to ours.
